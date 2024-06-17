@@ -1,0 +1,64 @@
+@font-face {
+  font-family: "DINpro";
+  src: url("../../Assets/Fonts/dinpro/DINPro-Medium\ tr.ttf");
+}
+@font-face {
+  font-family: "DINproLight";
+  src: url("../../Assets/Fonts/dinpro/DINPro-Light\ tr.ttf");
+}
+
+.container {
+  background: #fff7e2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 4;
+}
+.container img {
+  width: 259px;
+  height: 49px;
+  margin: 26.5px 0 18.5px 0;
+}
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 104px;
+}
+.links div {
+  margin-left: 80px;
+}
+.links div a {
+  margin-right: 40px;
+  font-family: "DINpro", sans-serif;
+  color: #474747;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  text-decoration: none;
+}
+.buttons {
+  margin-right: 104px;
+}
+.buttons button {
+  cursor: pointer;
+  line-height: 30.91px;
+  font-family: "DINproLight", sans-serif;
+  padding: 6px 20px;
+  border-radius: 11px;
+  font-size: 24px;
+  font-weight: 500;
+}
+.buttons button:first-of-type {
+  margin-right: 16px;
+  border: 1px solid #3a643b;
+  background: #fff7e2;
+  color: #3a643b;
+}
+.buttons button:last-of-type {
+  background: #3a643b;
+  color: #ffffff;
+  border: none;
+  outline: none;
+}
