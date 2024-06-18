@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Product from "../../Components/Product/Product";
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
@@ -11,6 +12,12 @@ import classes from "./Store.module.css";
 import FilterContainer from "../../Components/FilterContainer/FilterContainer";
 
 const Store = () => {
+  const navigate = useNavigate();
+
+  //Handlers
+  const prodDetailHandler = () => {
+    navigate("/prodDetail");
+  };
   return (
     <div>
       <Header />
@@ -26,6 +33,7 @@ const Store = () => {
             cost={"649.00"}
             amount={"200ml"}
             rating={"52"}
+            onClick={prodDetailHandler}
           />
           <Product
             src={product2}

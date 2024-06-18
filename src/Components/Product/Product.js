@@ -1,10 +1,11 @@
 import ruppee from "../../Assets/Images/ruppee.png";
 import ellipse from "../../Assets/Images/ellipse.png";
+import add from "../../Assets/Images/add.png";
 import classes from "./Product.module.css";
 
 const Product = (props) => {
   return (
-    <div className={classes.container}>
+    <div className={classes.container} onClick={props.onClick}>
       <img
         src={props.src}
         alt={props.src}
@@ -84,6 +85,13 @@ const Product = (props) => {
             ({props.rating})
           </span>
         </div>
+        {props.add ? (
+          <div className={classes.add}>
+            <img src={add} alt="add" />
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );
