@@ -1,0 +1,36 @@
+@font-face {
+  font-family: "PoppinsLight";
+  src: url("../../Assets/Fonts/Poppins/Poppins-Light.ttf");
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 328px;
+  padding: 16px 0;
+  border-bottom: 1px solid #e2e2e2;
+}
+.container span {
+  font-family: "PoppinsLight", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+}
+.radioBtn {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1.5px solid #646665;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.selected {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #41a647;
+  margin-bottom: 0 !important;
+}

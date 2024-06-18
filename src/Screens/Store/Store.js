@@ -1,5 +1,7 @@
+import { useState } from "react";
 import Filter from "../../Components/Filter/Filter";
 import Product from "../../Components/Product/Product";
+import SortField from "../../Components/SortField/SortField";
 import all from "../../Assets/Images/all.png";
 import hair from "../../Assets/Images/hair.png";
 import skin from "../../Assets/Images/skin.png";
@@ -14,9 +16,17 @@ import arrow from "../../Assets/Images/arrow.png";
 import googlePlay from "../../Assets/Images/googlePlay.png";
 import appStore from "../../Assets/Images/appStore.png";
 import iPhone13 from "../../Assets/Images/iPhone13.png";
+import bestsellerProduct from "../../Assets/Images/bestsellerProduct.png";
 
 import classes from "./Store.module.css";
 const Store = () => {
+  //States
+  const [moreFilters, showMoreFilters] = useState(false);
+
+  //Handlers
+  const moreFilterHandler = () => {
+    showMoreFilters((prev) => !prev);
+  };
   return (
     <div>
       <div className={classes.header}>
@@ -89,8 +99,66 @@ const Store = () => {
           width={"84px"}
           height={"84px"}
         />
-        <Filter src={more} name={"More"} width={"10px"} height={"18px"} />
+        <Filter
+          src={more}
+          name={"More"}
+          width={"10px"}
+          height={"18px"}
+          onClick={moreFilterHandler}
+        />
+        {moreFilters ? (
+          <div className={classes.allFilters}>
+            <div className={classes.sec1}>
+              <div>
+                <h4>Sort by concern</h4>
+                <SortField id={1} name={"Color Protection"} />
+                <SortField id={2} name={"Dry and Frizzy Hair"} />
+                <SortField id={3} name={"Shine & Luster"} />
+                <SortField id={4} name={"Hair Growth"} />
+                <SortField
+                  id={5}
+                  name={"Hair loss and thinning"}
+                  border={"none"}
+                />
+              </div>
+              <div>
+                <h4>Sort by category</h4>
+                <SortField id={6} name={"Hair Care - Spa/Hair Mask"} />
+                <SortField id={7} name={"Haire Care - Shampoo & Conditioner"} />
+                <SortField id={8} name={"Hair Care - Hair Oils"} />
+                <SortField
+                  id={9}
+                  name={"Hair Care - Hair Malt"}
+                  border={"none"}
+                />
+              </div>
+              <div className={classes.line} />
+            </div>
+            <div className={classes.sec2}>
+              <Product
+                src={bestsellerProduct}
+                name={
+                  "Amrutam Kuntal Care Herbal Shampoo | Healthy, Natural and Dynamic Hair"
+                }
+                cost={"649.00"}
+                amount={"200ml"}
+                rating={"52"}
+                imageWidth={"238px"}
+                imageHeight={"269px"}
+                nameSize={"16px"}
+                infoSize={"14px"}
+                inline={"inline-block"}
+              />
+              <div className={classes.bestseller}>
+                <span>Bestseller</span>
+              </div>
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
+
       <div className={classes.productContainer}>
         <h3>Summer Collection</h3>
         <div className={classes.prodCon1}>

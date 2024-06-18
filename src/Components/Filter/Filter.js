@@ -1,7 +1,7 @@
 import classes from "./Filter.module.css";
 const Filter = (props) => {
   return (
-    <div className={classes.container}>
+    <div className={classes.container} onClick={props.onClick}>
       <div>
         <img
           src={props.src}

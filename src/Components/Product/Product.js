@@ -5,14 +5,18 @@ import classes from "./Product.module.css";
 const Product = (props) => {
   return (
     <div className={classes.container}>
-      <img src={props.src} alt={props.src} />
+      <img
+        src={props.src}
+        alt={props.src}
+        style={{ width: props.imageWidth, height: props.imageHeight }}
+      />
       <div className={classes.content}>
-        <h5>{props.name}</h5>
+        <h5 style={{ fontSize: props.nameSize }}>{props.name}</h5>
         <div className={classes.sec1}>
           <img src={ruppee} alt="ruppee" />
-          <span>{props.cost}</span>
+          <span style={{ fontSize: props.infoSize }}>{props.cost}</span>
           <img src={ellipse} alt="ellipse" />
-          <span>{props.amount}</span>
+          <span style={{ fontSize: props.infoSize }}>{props.amount}</span>
         </div>
         <div className={classes.sec2}>
           <svg
@@ -76,7 +80,9 @@ const Product = (props) => {
             />
           </svg>
 
-          <span className={classes.rating}>({props.rating})</span>
+          <span className={classes.rating} style={{ fontSize: props.infoSize }}>
+            ({props.rating})
+          </span>
         </div>
       </div>
     </div>
