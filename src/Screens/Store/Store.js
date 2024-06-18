@@ -11,6 +11,9 @@ import product1 from "../../Assets/Images/product1.png";
 import product2 from "../../Assets/Images/product2.png";
 import product3 from "../../Assets/Images/product3.png";
 import arrow from "../../Assets/Images/arrow.png";
+import googlePlay from "../../Assets/Images/googlePlay.png";
+import appStore from "../../Assets/Images/appStore.png";
+import iPhone13 from "../../Assets/Images/iPhone13.png";
 
 import classes from "./Store.module.css";
 const Store = () => {
@@ -155,6 +158,40 @@ const Store = () => {
             <img src={arrow} alt="arrow" />
           </div>
         </div>
+      </div>
+      <div className={classes.homeAppContainer}>
+        <div className={classes.content}>
+          <h2>Amrutam Home App</h2>
+          <p>
+            The Amrutam Home App is your one-stop app for all things Ayurveda!
+            Apart from mimicking the significant characteristics of our website,
+            this app offers a wide range of additional features.
+          </p>
+          <h3>
+            Get a diet & lifestyle consultation with ayurvedic experts across
+            the globe{" "}
+          </h3>
+          <h1>Get the App now</h1>
+          <div>
+            <img src={googlePlay} alt="google-play" />
+            <img src={appStore} alt="app-store" />
+          </div>
+        </div>
+        <div className={classes.phone}>
+          <img src={iPhone13} alt="iPhone13" />
+          <div className={classes.ellipse1} />
+          <div className={classes.ellipse2} />
+        </div>
+      </div>
+      <div className={classes.footer}>
+        <h4>Information</h4>
+        <span>About Us</span>
+        <span>Terms and Conditions</span>
+        <span>Privacy Policy</span>
+        <span>Privacy Policy for Mobile Apps</span>
+        <span>Shipping and Returns Policy</span>
+        <span>International Delivery</span>
+        <span>For Businesses, Hotels and Resorts</span>
       </div>
     </div>
   );

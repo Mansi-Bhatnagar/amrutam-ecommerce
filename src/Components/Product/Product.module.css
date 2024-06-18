@@ -18,6 +18,9 @@
   flex-direction: column;
   width: 365px;
 }
+.container:hover {
+  cursor: pointer;
+}
 .content {
   display: flex;
   align-items: center;
