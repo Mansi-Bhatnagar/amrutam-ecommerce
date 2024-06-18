@@ -1,0 +1,94 @@
+@font-face {
+  font-family: "PoppinsLight";
+  src: url("../../Assets/Fonts/Poppins/Poppins-Light.ttf");
+}
+@font-face {
+  font-family: "PoppinsBold";
+  src: url("../../Assets/Fonts/Poppins/Poppins-ExtraBold.ttf");
+}
+@font-face {
+  font-family: "NunitoMedium";
+  src: url("../../Assets/Fonts/Nunito/static/Nunito-Medium.ttf");
+}
+.homeAppContainer {
+  background: #fff7e2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+  padding-top: 65px;
+}
+.content {
+  margin-left: 146px;
+}
+.content h2 {
+  font-family: "PoppinsBold", sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 44.8px;
+  color: #3a643b;
+  margin: 0;
+  margin-bottom: 16px;
+}
+.content p {
+  font-family: "PoppinsLight", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #676767;
+}
+.content h3 {
+  font-family: "NunitoMedium", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 44.8px;
+  color: #000000;
+  text-transform: capitalize;
+  margin-top: 24px;
+  margin-bottom: 65px;
+}
+.content h1 {
+  font-family: "PoppinsBold", sans-serif;
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 50.4px;
+  text-transform: capitalize;
+  margin: 0;
+  margin-bottom: 33px;
+}
+.content div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 17px;
+  margin-bottom: 117px;
+}
+.content div img {
+  width: 270px;
+  height: 80px;
+  cursor: pointer;
+}
+.phone {
+  position: relative;
+}
+.phone img {
+  position: relative;
+  z-index: 2;
+}
+.ellipse1,
+.ellipse2 {
+  width: 258px;
+  height: 258px;
+  border-radius: 50%;
+  background: #3a643b29;
+  position: absolute;
+}
+.ellipse1 {
+  bottom: 275px;
+  left: 150px;
+}
+.ellipse2 {
+  top: 290px;
+  left: 390px;
+}

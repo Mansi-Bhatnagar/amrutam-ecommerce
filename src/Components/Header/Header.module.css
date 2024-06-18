@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("../../Assets/Fonts/Poppins/Poppins-Medium.ttf");
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("../../Assets/Fonts/Nunito/static/Nunito-Light.ttf");
+}
+.header {
+  background: #eaf2ea;
+  background-image: url("../../Assets/Images/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.header h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 54px;
+  text-align: center;
+  margin: 0;
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
+.searchContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 41px;
+}
+.inputContainer {
+  width: 539px;
+  height: 48px;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.inputContainer input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.inputContainer input::placeholder {
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: #2e2f2e;
+}
+.inputContainer svg {
+  padding: 8px 0 12px 12px;
+}
+.cart {
+  padding: 6px 7.5px 6px 8.5px;
+  border-radius: 7px;
+  background-color: #ffffff;
+}
+.cart:hover {
+  cursor: pointer;
+}

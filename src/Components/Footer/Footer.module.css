@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "PoppinsLight";
+  src: url("../../Assets/Fonts/Poppins/Poppins-Light.ttf");
+}
+@font-face {
+  font-family: "PoppinsBold";
+  src: url("../../Assets/Fonts/Poppins/Poppins-ExtraBold.ttf");
+}
+.footer {
+  background: #3a643b2e;
+  padding-top: 145px;
+  padding-bottom: 166px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.footer h4 {
+  font-family: "PoppinsBold", sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 27px;
+  letter-spacing: 0.03em;
+  color: #3a643b;
+  width: 350px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+.footer span {
+  font-family: "PoppinsLight";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  color: #474747;
+  width: 350px;
+}
