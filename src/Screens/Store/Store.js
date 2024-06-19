@@ -20,7 +20,7 @@ const Store = () => {
   };
   return (
     <div>
-      <Header />
+      <Header name={"Store"} show={true} />
       <FilterContainer />
       <div className={classes.productContainer}>
         <h3>Summer Collection</h3>

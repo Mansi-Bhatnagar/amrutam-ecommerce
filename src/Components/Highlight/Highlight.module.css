@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "NunitoMedium";
+  src: url("../../Assets/Fonts/Nunito/static/Nunito-Medium.ttf");
+}
+.container {
+  width: 149px;
+  height: 204px;
+  border-radius: 12px;
+  background: #f5f3fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.container img {
+  width: 124px;
+  height: 124px;
+}
+.container h4 {
+  font-family: "NunitoMedium";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  width: 130px;
+  margin-left: 12px;
+  margin-right: 5px;
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
