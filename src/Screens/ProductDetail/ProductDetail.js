@@ -5,6 +5,9 @@ import Header from "../../Components/Header/Header";
 import Highlight from "../../Components/Highlight/Highlight";
 import Ingredient from "../../Components/Ingredient/Ingredient";
 import HomeAppContainer from "../../Components/HomeAppContainer/HomeAppContainer";
+import UserReview from "../../Components/UserReview/UserReview";
+import SimilarProducts from "../../Components/SimilarProducts/SimilarProducts";
+import Doctor from "../../Components/Doctor/Doctor";
 import product1 from "../../Assets/Images/product1.png";
 import product2 from "../../Assets/Images/product2.png";
 import product3 from "../../Assets/Images/product3.png";
@@ -13,11 +16,12 @@ import ruppee from "../../Assets/Images/ruppee.png";
 import recipe from "../../Assets/Images/recipe.png";
 import expert from "../../Assets/Images/expert.png";
 import play from "../../Assets/Images/play.png";
+import leftarrow from "../../Assets/Images/leftarrow.png";
+import rightarrow from "../../Assets/Images/arrow.png";
 import classes from "./ProductDetail.module.css";
-import UserReview from "../../Components/UserReview/UserReview";
-import SimilarProducts from "../../Components/SimilarProducts/SimilarProducts";
 
 const ProductDetail = () => {
+  let index = 1;
   const carouselImages = [
     { id: 0, src: product1 },
     { id: 1, src: product2 },
@@ -41,12 +45,12 @@ const ProductDetail = () => {
   const addToCartHandler = () => {
     if (localStorage.getItem("amrutam")) {
       const arr = JSON.parse(localStorage.getItem("amrutam"));
-      arr.push({ quantity: quantity, price: 649.0 });
+      arr.push({ quantity: quantity, price: 649.0, index: index++ });
       localStorage.setItem("amrutam", JSON.stringify(arr));
     } else {
       localStorage.setItem(
         "amrutam",
-        JSON.stringify([{ quantity: quantity, price: 649.0 }])
+        JSON.stringify([{ quantity: quantity, price: 649.0, index: 0 }])
       );
     }
   };
@@ -385,6 +389,67 @@ const ProductDetail = () => {
         <UserReview />
       </div>
       <SimilarProducts />
+      <div className={classes.doctors}>
+        <h4>Meet our Experts</h4>
+        <div className={classes.doctorContainer}>
+          <div className={classes.arrowContainer}>
+            <img src={leftarrow} alt="left-arrow" />
+          </div>
+          <Doctor />
+          <Doctor />
+          <Doctor />
+          <div className={classes.arrowContainer}>
+            <img src={rightarrow} alt="right-arrow" />
+          </div>
+        </div>
+        <div className={classes.circles}>
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="6" cy="6" r="6" fill="#3A643B" />
+          </svg>
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="6" cy="6" r="6" fill="#C3C3C3" />
+          </svg>
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="6" cy="6" r="6" fill="#C3C3C3" />
+          </svg>
+        </div>
+        <button className={classes.moreBtn}>
+          <span>Find more experts</span>
+          <svg
+            width="8"
+            height="14"
+            viewBox="0 0 8 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1 13L7 7L1 1"
+              stroke="#3A643B"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
       <HomeAppContainer />
       <Footer />
     </div>

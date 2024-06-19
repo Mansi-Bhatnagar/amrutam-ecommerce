@@ -386,3 +386,68 @@
   letter-spacing: -0.01em;
   color: #3a643b;
 }
+.doctors {
+  margin-top: 137px;
+}
+.doctors h4 {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 114px;
+}
+.doctorContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  margin-bottom: 31px;
+}
+.circles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+.circles svg {
+  width: 12px;
+  height: 12px;
+}
+.moreBtn {
+  width: 276px;
+  padding: 0px 25px 0px 25px;
+  border-radius: 7px;
+  border: 1px solid #3a643b;
+  background: #dbe3dc63;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 auto;
+  margin-bottom: 56px;
+}
+.moreBtn span {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 58px;
+  letter-spacing: -0.01em;
+  color: #3a643b;
+}
+.arrowContainer {
+  width: 70px;
+  height: 70px;
+  border: 1px solid #bcbcbc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.arrowContainer img {
+  width: 23px;
+}

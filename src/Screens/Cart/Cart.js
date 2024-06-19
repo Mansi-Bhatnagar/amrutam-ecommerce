@@ -9,13 +9,27 @@ import classes from "./Cart.module.css";
 const Cart = () => {
   //States
   const [cartProducts, setCartProducts] = useState([]);
-  const [quantity, setQuantity] = useState();
+  const [totalAmount, setTotalAmount] = useState();
+
   //Handlers
-  const incrementHandler = () => {
-    setQuantity((prev) => prev + 1);
+  const incrementHandler = (index) => {
+    setCartProducts((prev) => {
+      let temp = [...prev];
+      temp[index].quantity += 1;
+      temp[index].quantity -= 0.5;
+      return temp;
+    });
   };
-  const decrementHandler = () => {
-    setQuantity((prev) => (prev === 0 ? 0 : prev - 1));
+  const decrementHandler = (index) => {
+    setCartProducts((prev) => {
+      let temp = [...prev];
+      if (temp[index].quantity !== 0) {
+        temp[index].quantity -= 1;
+        temp[index].quantity += 0.5;
+      }
+
+      return temp;
+    });
   };
 
   //Effects
@@ -27,6 +41,12 @@ const Cart = () => {
     }
   }, []);
 
+  useEffect(() => {
+    setTotalAmount(
+      cartProducts.reduce((acc, item) => acc + item.quantity * item.price, 0)
+    );
+  }, [cartProducts]);
+
   return (
     <div>
       <Header name={"Cart"} show={false} padding={"72px 0"} />
@@ -35,8 +55,8 @@ const Cart = () => {
         <h4>QUANTITY</h4>
         <h4>PRICE</h4>
       </div>
-      {cartProducts.map((product, index) => (
-        <div key={index} className={classes.container}>
+      {cartProducts.map((product) => (
+        <div key={product.index} className={classes.container}>
           <div className={classes.prodDesc}>
             <img src={product1} alt="product" />
             <div className={classes.info}>
@@ -107,7 +127,7 @@ const Cart = () => {
               viewBox="0 0 20 2"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              onClick={decrementHandler}
+              onClick={() => decrementHandler(product.index)}
             >
               <path
                 d="M1 1H19"
@@ -123,7 +143,7 @@ const Cart = () => {
               viewBox="0 0 18 18"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              onClick={incrementHandler}
+              onClick={() => incrementHandler(product.index)}
             >
               <path
                 d="M17.1 8.1H9.9V0.9C9.9 0.405 9.495 0 9 0C8.505 0 8.1 0.405 8.1 0.9V8.1H0.9C0.405 8.1 0 8.505 0 9C0 9.495 0.405 9.9 0.9 9.9H8.1V17.1C8.1 17.595 8.505 18 9 18C9.495 18 9.9 17.595 9.9 17.1V9.9H17.1C17.595 9.9 18 9.495 18 9C18 8.505 17.595 8.1 17.1 8.1Z"
@@ -141,7 +161,7 @@ const Cart = () => {
         <h4>ORDER AMOUNT</h4>
         <div className={classes.price}>
           <img src={ruppee} alt="ruppee" />
-          <span>1947.00</span>
+          <span>{totalAmount + ".00"}</span>
         </div>
       </div>
       <div className={classes.discount}>
@@ -152,7 +172,7 @@ const Cart = () => {
         </div>
       </div>
       <div className={classes.line} />
-      <h4 className={classes.total}>TOTAL AMOUNT : Rs 1947.00</h4>
+      <h4 className={classes.total}>TOTAL AMOUNT : Rs {totalAmount + ".00"}</h4>
       <button className={classes.proceed}>Proceed to checkout</button>
       <SimilarProducts />
       <HomeAppContainer />
