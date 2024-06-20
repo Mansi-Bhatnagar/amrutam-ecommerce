@@ -65,3 +65,33 @@
 .cart:hover {
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  .inputContainer {
+    width: 16rem;
+  }
+  .header {
+    background-size: fill;
+    background-position: top;
+  }
+}
+@media (max-width: 500px) {
+  .header {
+    background: none;
+  }
+  .header h1 {
+    display: none;
+  }
+  .searchContainer {
+    margin-top: 42px;
+    padding-bottom: 0;
+  }
+  .inputContainer input::placeholder {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+  .cart svg {
+    width: 24px;
+    height: 24px;
+  }
+}

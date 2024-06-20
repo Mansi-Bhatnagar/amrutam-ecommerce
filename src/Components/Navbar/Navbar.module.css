@@ -62,3 +62,102 @@
   border: none;
   outline: none;
 }
+.hamburger,
+.mobileLogo {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .links {
+    margin-left: 50px;
+  }
+  .buttons {
+    margin-right: 50px;
+  }
+}
+@media (max-width: 1065px) {
+  .links div {
+    margin-left: 0px;
+  }
+  .links div a {
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .links {
+    margin-left: 25px;
+    width: 65%;
+  }
+  .buttons {
+    margin-right: 25px;
+  }
+  .container img {
+    width: 200px;
+  }
+  .buttons button {
+    padding: 6px 15px;
+    font-size: 18px;
+  }
+}
+@media (max-width: 768px) {
+  .links,
+  .buttons {
+    display: none;
+  }
+  .hamburger,
+  .mobileLogo {
+    display: block;
+  }
+  .container .mobileLogo {
+    max-height: 2rem;
+    margin: 51px 0 29px 0;
+  }
+  .hamburger {
+    width: 32px;
+    height: 14px;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin-top: 20px;
+    position: absolute;
+    left: 19px;
+  }
+  .container {
+    justify-content: center;
+  }
+  .sidebar {
+    position: absolute;
+    width: 200px;
+    background: #fff;
+    left: 15px;
+    top: 80px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 7px 1px rgba(0, 0, 0, 0.43);
+    -webkit-box-shadow: 1px 2px 7px 1px rgba(0, 0, 0, 0.43);
+    -moz-box-shadow: 1px 2px 7px 1px rgba(0, 0, 0, 0.43);
+  }
+  .sidebar div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0 30px 0;
+  }
+  .sidebar div a {
+    font-family: "DINpro", sans-serif;
+    color: #474747;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  .sidebar div button {
+    background: none;
+    border: none;
+    outline: none;
+    font-family: "DINpro", sans-serif;
+    color: #3a643b;
+    font-size: 20px;
+    font-weight: 700;
+  }
+}

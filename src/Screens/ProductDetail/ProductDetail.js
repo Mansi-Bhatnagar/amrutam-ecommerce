@@ -376,6 +376,10 @@ const ProductDetail = () => {
               <span>Based on 20 reviews</span>
             </div>
           </div>
+          <div className={classes.mobileVis}>
+            <UserReview />
+            <UserReview />
+          </div>
           <div className={classes.s2}>
             <div>
               <span>See more reviews</span>
@@ -385,8 +389,10 @@ const ProductDetail = () => {
             </div>
           </div>
         </div>
-        <UserReview />
-        <UserReview />
+        <div className={classes.desktopVis}>
+          <UserReview />
+          <UserReview />
+        </div>
       </div>
       <SimilarProducts />
       <div className={classes.doctors}>

@@ -21,8 +21,9 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  top: 127px;
+  top: 474px;
   box-shadow: 0px 4px 7px 0px #00000040;
+  z-index: 10;
 }
 .allFilters .sec1 {
   display: flex;
@@ -69,4 +70,60 @@
   line-height: 24px;
   letter-spacing: -0.01em;
   color: #b26b17;
+}
+@media (max-width: 1370px) {
+  .line {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+@media (max-width: 1068px) {
+  .sec2 {
+    display: none;
+  }
+  .line {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .filterContainer {
+    gap: 16px;
+  }
+  .allFilters .sec1 {
+    flex-direction: column;
+    gap: 0;
+  }
+  .sec1 div:first-child {
+    margin-bottom: 0px;
+  }
+  .sec1 {
+    padding-bottom: 50px;
+  }
+  .sec1 div h4 {
+    text-align: center;
+  }
+}
+@media (max-width: 625px) {
+  .filterContainer {
+    width: 95%;
+    overflow: scroll;
+    gap: 16px;
+    justify-content: flex-start;
+    scrollbar-width: 0;
+    margin: 0 auto;
+    margin-top: 23px;
+    overflow-y: hidden;
+  }
+  .filterContainer::-webkit-scrollbar {
+    display: none;
+  }
+  .filterContainer {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+@media (max-width: 500px) {
+  .allFilters {
+    display: none;
+  }
 }

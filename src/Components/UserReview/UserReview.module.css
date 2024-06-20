@@ -43,3 +43,24 @@
 .s3 div svg {
   margin: 0 2px;
 }
+@media (max-width: 570px) {
+  .userReview {
+    width: calc(100% - 64px);
+    margin-left: 20px;
+    margin-right: 20px;
+    align-items: flex-start;
+  }
+  .userReview p {
+    font-size: 16px;
+  }
+  .userReview span {
+    font-size: 12px;
+  }
+  .userReview img {
+    width: 32px;
+    height: 32px;
+  }
+  .s3 {
+    gap: 2px;
+  }
+}

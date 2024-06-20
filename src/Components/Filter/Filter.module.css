@@ -30,3 +30,9 @@
 .container div:hover {
   cursor: pointer;
 }
+/* @media (max-width: 500px) {
+  .container {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+} */

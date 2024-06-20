@@ -33,3 +33,17 @@
   color: #474747;
   width: 350px;
 }
+@media (max-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+  .footer span,
+  .footer h4 {
+    font-size: 14px;
+  }
+}
+@media (max-width: 500px) {
+  .footer {
+    display: none;
+  }
+}

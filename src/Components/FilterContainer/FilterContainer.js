@@ -22,25 +22,32 @@ const FilterContainer = () => {
     showMoreFilters((prev) => !prev);
   };
   return (
-    <div className={classes.filterContainer}>
-      <Filter src={all} name={"All"} width={"33px"} height={"28px"} />
-      <Filter src={hair} name={"Hair"} width={"78px"} height={"78px"} />
-      <Filter src={skin} name={"Skin"} width={"40.37px"} height={"39px"} />
-      <Filter
-        src={digestion}
-        name={"Digestion"}
-        width={"41.86px"}
-        height={"37px"}
-      />
-      <Filter src={bones} name={"Bones"} width={"35.29px"} height={"41px"} />
-      <Filter src={immunity} name={"Immunity"} width={"84px"} height={"84px"} />
-      <Filter
-        src={more}
-        name={"More"}
-        width={"10px"}
-        height={"18px"}
-        onClick={moreFilterHandler}
-      />
+    <>
+      <div className={classes.filterContainer}>
+        <Filter src={all} name={"All"} width={"33px"} height={"28px"} />
+        <Filter src={hair} name={"Hair"} width={"78px"} height={"78px"} />
+        <Filter src={skin} name={"Skin"} width={"40.37px"} height={"39px"} />
+        <Filter
+          src={digestion}
+          name={"Digestion"}
+          width={"41.86px"}
+          height={"37px"}
+        />
+        <Filter src={bones} name={"Bones"} width={"35.29px"} height={"41px"} />
+        <Filter
+          src={immunity}
+          name={"Immunity"}
+          width={"84px"}
+          height={"84px"}
+        />
+        <Filter
+          src={more}
+          name={"More"}
+          width={"10px"}
+          height={"18px"}
+          onClick={moreFilterHandler}
+        />
+      </div>
       {moreFilters ? (
         <div className={classes.allFilters}>
           <div className={classes.sec1}>
@@ -92,7 +99,7 @@ const FilterContainer = () => {
       ) : (
         ""
       )}
-    </div>
+    </>
   );
 };
 

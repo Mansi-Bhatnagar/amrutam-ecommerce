@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "Nunito";
+  src: url("../../Assets/Fonts/Nunito/static/Nunito-Light.ttf");
+}
+.container {
+  display: none;
+}
+@media (max-width: 500px) {
+  .container {
+    display: block;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    border-radius: 29.17px 29.17px 0px 0px;
+    background: #3a643b;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .container div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 8.33px 16.67px 3.75px 16.67px;
+    border-radius: 20.83px;
+    gap: 6.25px;
+  }
+  .container div span {
+    font-family: "Nunito", sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14.58px;
+    letter-spacing: -0.01em;
+    color: #9db29d;
+  }
+}

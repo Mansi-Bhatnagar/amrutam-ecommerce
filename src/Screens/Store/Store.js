@@ -10,6 +10,8 @@ import arrow from "../../Assets/Images/arrow.png";
 
 import classes from "./Store.module.css";
 import FilterContainer from "../../Components/FilterContainer/FilterContainer";
+import BottomNavigation from "../../Components/BottomNavigation/BottomNavigation";
+import MobileFilters from "../../Components/MobileFilters/MobileFilters";
 
 const Store = () => {
   const navigate = useNavigate();
@@ -35,6 +37,8 @@ const Store = () => {
             rating={"52"}
             onClick={prodDetailHandler}
           />
+          <div className={classes.border} />
+
           <Product
             src={product2}
             name={
@@ -44,6 +48,8 @@ const Store = () => {
             amount={"200ml"}
             rating={"52"}
           />
+          <div className={classes.border} />
+
           <Product
             src={product3}
             name={
@@ -53,6 +59,8 @@ const Store = () => {
             amount={"200ml"}
             rating={"52"}
           />
+          <div className={classes.border} />
+
           <div className={classes.moreProd}>
             <img src={arrow} alt="arrow" />
           </div>
@@ -68,6 +76,7 @@ const Store = () => {
             amount={"200ml"}
             rating={"52"}
           />
+          <div className={classes.border} />
           <Product
             src={product2}
             name={
@@ -77,6 +86,8 @@ const Store = () => {
             amount={"200ml"}
             rating={"52"}
           />
+          <div className={classes.border} />
+
           <Product
             src={product3}
             name={
@@ -90,6 +101,13 @@ const Store = () => {
             <img src={arrow} alt="arrow" />
           </div>
         </div>
+      </div>
+      <MobileFilters />
+      <div
+        style={{ background: " #EAF2EA", width: "100%", height: "75px" }}
+        className={classes.bottom}
+      >
+        <BottomNavigation />
       </div>
       <HomeAppContainer />
       <Footer />

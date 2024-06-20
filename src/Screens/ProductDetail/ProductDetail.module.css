@@ -451,3 +451,90 @@
 .arrowContainer img {
   width: 23px;
 }
+.mobileVis {
+  display: none;
+}
+.desktopVis {
+  display: block;
+}
+
+@media (max-width: 1350px) {
+  .contentContainer {
+    gap: 0;
+  }
+  .activeImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .activeImage .carouselArrow {
+    right: 15%;
+  }
+  .activeImage img {
+    width: 75%;
+    height: 75%;
+  }
+  .allImages img {
+    display: none;
+  }
+  .options button {
+    padding: 19px 50px;
+  }
+  .options .ranger {
+    width: 162px;
+  }
+}
+@media (max-width: 1290px) {
+  .contentContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .highlightContainer,
+  .ingredientContainer {
+    justify-content: center;
+  }
+}
+@media (max-width: 700px) {
+  .highlightContainer,
+  .ingredientContainer {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 900px) {
+  .reviewContainer {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .s2 {
+    margin-bottom: 20px;
+  }
+  .reviewContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .s1 {
+    margin-bottom: 20px;
+  }
+  .mobileVis {
+    display: block;
+  }
+  .desktopVis {
+    display: none;
+  }
+}
+@media (max-width: 570px) {
+  .reviews {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .s1 {
+    width: calc(100% - 64px);
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .reviews h3 {
+    font-size: 16px;
+    text-align: left;
+    margin-left: 20px;
+  }
+}
