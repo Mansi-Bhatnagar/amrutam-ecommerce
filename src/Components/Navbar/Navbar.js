@@ -23,7 +23,9 @@ const Navbar = () => {
 
     const isSmallScreen = window.innerWidth <= 500;
     setSize(
-      (location.pathname === "/prodDetail" || location.pathname === "/cart") &&
+      (location.pathname === "/prodDetail" ||
+        location.pathname === "/cart" ||
+        location.pathname === "/success") &&
         isSmallScreen
     );
     window.addEventListener("resize", handleResize);

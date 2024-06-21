@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../../Components/Header/Header";
 import HomeAppContainer from "../../Components/HomeAppContainer/HomeAppContainer";
 import Footer from "../../Components/Footer/Footer";
@@ -7,6 +8,8 @@ import product1 from "../../Assets/Images/product1.png";
 import ruppee from "../../Assets/Images/ruppee.png";
 import classes from "./Cart.module.css";
 const Cart = () => {
+  const navigate = useNavigate();
+
   //States
   const [cartProducts, setCartProducts] = useState([]);
   const [totalAmount, setTotalAmount] = useState();
@@ -30,6 +33,9 @@ const Cart = () => {
 
       return temp;
     });
+  };
+  const successHandler = () => {
+    navigate("/success");
   };
 
   //Effects
@@ -173,7 +179,9 @@ const Cart = () => {
       </div>
       <div className={classes.line} />
       <h4 className={classes.total}>TOTAL AMOUNT : Rs {totalAmount + ".00"}</h4>
-      <button className={classes.proceed}>Proceed to checkout</button>
+      <button className={classes.proceed} onClick={successHandler}>
+        Proceed to checkout
+      </button>
       <SimilarProducts />
       <HomeAppContainer />
       <Footer />
