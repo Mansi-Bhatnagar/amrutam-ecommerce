@@ -231,6 +231,7 @@ const ProductDetail = () => {
             </p>
             <p>It's time to bring spa home and unwind.</p>
           </div>
+          <div className={classes.separation} />
           <div className={classes.highlights}>
             <div className={classes.heading}>
               <img src={recipe} alt="recipe" />
@@ -243,6 +244,7 @@ const ProductDetail = () => {
               <Highlight name={"Reduces hairfall, repairs damaged hair"} />
             </div>
           </div>
+          <div className={classes.separation} />
           <div className={classes.ingredients}>
             <div className={classes.heading}>
               <img src={recipe} alt="recipe" />
@@ -267,6 +269,7 @@ const ProductDetail = () => {
               />
             </div>
           </div>
+          <div className={classes.separation} />
           <div className={classes.instructions}>
             <h4>How to use</h4>
             <div className={classes.wrapper}>
@@ -277,6 +280,7 @@ const ProductDetail = () => {
               </p>
             </div>
           </div>
+          <div className={classes.separation} />
           <div className={classes.genInstructions}>
             <h4>General Instructions</h4>
             <div className={classes.wrapper}>
@@ -286,6 +290,7 @@ const ProductDetail = () => {
               </p>
             </div>
           </div>
+          <div className={classes.separation} />
           <div className={classes.questions}>
             <h4>Commonly Asked Questions</h4>
             <div className={classes.wrapper} style={{ marginBottom: "12px" }}>
@@ -319,6 +324,7 @@ const ProductDetail = () => {
               </p>
             </div>
           </div>
+          <div className={classes.separation} />
           <div className={classes.video}>
             <h5>Trust the voice</h5>
             <img src={expert} alt="expert" />
@@ -326,6 +332,7 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
+      <div className={classes.separation} />
       <div className={classes.reviews}>
         <h3>Reviews and Ratings</h3>
         <div className={classes.reviewContainer}>
@@ -415,7 +422,9 @@ const ProductDetail = () => {
           <UserReview />
         </div>
       </div>
+      <div className={classes.separation} />
       <SimilarProducts />
+      <div className={classes.separation} />
       <div className={classes.doctors}>
         <h4>Meet our Experts</h4>
         <div className={classes.doctorContainer}>
