@@ -149,6 +149,7 @@
   line-height: 18px;
   letter-spacing: -0.01em;
   margin: 0;
+  text-transform: uppercase;
 }
 .line {
   background-color: #e2e2e2;
@@ -166,6 +167,7 @@
   margin: 0;
   margin-right: 73px;
   margin-top: 44px;
+  text-transform: uppercase;
 }
 .proceed {
   border-radius: 12px;
@@ -184,8 +186,151 @@
   margin-top: 43px;
   cursor: pointer;
 }
+.rangerSmall {
+  display: none;
+}
 @media (max-width: 1100px) {
+  .info {
+    gap: 10px;
+    width: min-content;
+  }
+  .container {
+    margin: 40px 20px 61px;
+    justify-content: space-around;
+  }
   .prodDesc div p {
-    width: 50%;
+    font-size: 15px;
+  }
+  .price span {
+    font-size: 15px;
+  }
+  .price img {
+    width: 15px;
+    height: 15px;
+  }
+  .ranger {
+    width: 100px;
+  }
+  .headings {
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  .price {
+    display: none;
+  }
+  .prodDesc div p {
+    width: 200px;
+  }
+  .buttons svg {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+  }
+  .orderAmount h4,
+  .discount h4 {
+    font-size: 18px;
+    text-transform: capitalize;
+  }
+  .total {
+    font-size: 18px;
+    text-transform: capitalize;
+  }
+}
+@media (max-width: 650px) {
+  .ranger {
+    padding: 0 8px;
+    height: 32px;
+  }
+  .container {
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 550px) {
+  .prodDesc img {
+    width: 140px;
+    height: 140px;
+  }
+  .orderAmount,
+  .discount,
+  .total {
+    margin: 30px 20px 20px 20px;
+  }
+  .total {
+    margin-bottom: 50px;
+  }
+  .line {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .ranger {
+    display: none;
+  }
+  .buttons svg {
+    display: none;
+  }
+  .container {
+    justify-content: center;
+  }
+  .prodDesc,
+  .info {
+    width: calc(100% - 40px);
+  }
+  .prodDesc div p {
+    width: 100%;
+    font-size: 14px;
+  }
+  .costLine span {
+    font-size: 12px;
+  }
+  .prodDesc .ruppee {
+    width: 12px;
+    height: 12px;
+  }
+  .rangerSmall {
+    display: block;
+    width: 94px;
+    height: 32px;
+    border-radius: 8px;
+    background: #eaf2ea;
+    color: #3a643b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+    float: right;
+    margin-right: 20px;
+  }
+  .container {
+    margin-bottom: 0;
+  }
+  .prodDesc {
+    margin-top: 40px;
+  }
+  .proceed {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    width: calc(100% - 32px);
+    margin: 0;
+    padding: 0;
+    height: 52px;
+    z-index: 1000;
+  }
+  .orderAmount {
+    margin-top: 100px;
+  }
+}
+@media (max-width: 400px) {
+  .prodDesc,
+  .info {
+    width: calc(100% - 20px);
+  }
+  .container {
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }

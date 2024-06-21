@@ -37,6 +37,8 @@ const ProductDetail = () => {
   const [index, setIndex] = useState(0);
   const [showSuccess, setShowSuccess] = useState(false);
   const [showCart, setShowCart] = useState(false);
+  //For Mobile
+  const [itemCount, setItemCount] = useState(0);
 
   //Handlers
   const nextImageHandler = () => {
@@ -50,10 +52,12 @@ const ProductDetail = () => {
   };
   const addToCartHandler = (type) => {
     if (type) {
+      setItemCount((prev) => prev + 1);
       setShowCart(false);
       setShowSuccess(true);
       setTimeout(() => {
         setShowSuccess(false);
+
         setShowCart(true);
       }, 3000);
     }
@@ -511,7 +515,9 @@ const ProductDetail = () => {
             <div className={classes.infoP2}>
               <h5>Proceed to Checkout</h5>
               <div className={classes.infoP3}>
-                <span>1 item</span>
+                <span>
+                  {itemCount} {itemCount <= 1 ? "item" : "items"}
+                </span>
                 <svg
                   width="4"
                   height="4"
@@ -561,7 +567,7 @@ const ProductDetail = () => {
                     />
                   </svg>
 
-                  <span>649</span>
+                  <span>{itemCount * 649}</span>
                 </div>
               </div>
             </div>
