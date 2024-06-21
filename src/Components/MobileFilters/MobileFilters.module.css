@@ -60,4 +60,30 @@
     border-radius: 4px;
     background: #e2e2e2;
   }
+  .bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(15px);
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header button {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-family: "NunitoMedium";
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #3a643b;
+  }
 }

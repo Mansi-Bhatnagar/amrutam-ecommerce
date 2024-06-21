@@ -71,6 +71,7 @@
   color: #838383;
   margin: 0;
   margin-top: 7px;
+  text-align: center !important;
 }
 .experience {
   display: flex;
@@ -120,4 +121,13 @@
   color: #ffffff;
   background: #3a643b;
   padding: 23.5px 0;
+}
+@media (max-width: 570px) {
+  .container .name {
+    font-size: 16px;
+    line-height: 25px;
+  }
+  .container .btn {
+    font-size: 16px;
+  }
 }

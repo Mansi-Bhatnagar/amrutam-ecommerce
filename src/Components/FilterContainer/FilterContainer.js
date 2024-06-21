@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Filter from "../Filter/Filter";
 import Product from "../Product/Product";
 import SortField from "../SortField/SortField";
@@ -14,16 +15,41 @@ import bestsellerProduct from "../../Assets/Images/bestsellerProduct.png";
 import classes from "./FilterContainer.module.css";
 
 const FilterContainer = () => {
+  const location = useLocation();
+
   //States
   const [moreFilters, showMoreFilters] = useState(false);
+  const [size, setSize] = useState();
 
   //Handlers
   const moreFilterHandler = () => {
     showMoreFilters((prev) => !prev);
   };
+
+  //Effects
+  useEffect(() => {
+    const handleResize = () => {
+      setSize(window.innerWidth <= 500);
+    };
+
+    const isSmallScreen = window.innerWidth <= 500;
+    setSize(
+      (location.pathname === "/prodDetail" || location.pathname === "/cart") &&
+        isSmallScreen
+    );
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [location]);
+
   return (
     <>
-      <div className={classes.filterContainer}>
+      <div
+        className={classes.filterContainer}
+        style={{ display: size ? "none" : "flex" }}
+      >
         <Filter src={all} name={"All"} width={"33px"} height={"28px"} />
         <Filter src={hair} name={"Hair"} width={"78px"} height={"78px"} />
         <Filter src={skin} name={"Skin"} width={"40.37px"} height={"39px"} />
@@ -53,25 +79,43 @@ const FilterContainer = () => {
           <div className={classes.sec1}>
             <div>
               <h4>Sort by concern</h4>
-              <SortField id={1} name={"Color Protection"} />
-              <SortField id={2} name={"Dry and Frizzy Hair"} />
-              <SortField id={3} name={"Shine & Luster"} />
-              <SortField id={4} name={"Hair Growth"} />
+              <SortField id={1} name={"Color Protection"} grpName={"Concern"} />
+              <SortField
+                id={2}
+                name={"Dry and Frizzy Hair"}
+                grpName={"Concern"}
+              />
+              <SortField id={3} name={"Shine & Luster"} grpName={"Concern"} />
+              <SortField id={4} name={"Hair Growth"} grpName={"Concern"} />
               <SortField
                 id={5}
                 name={"Hair loss and thinning"}
                 border={"none"}
+                grpName={"Concern"}
               />
             </div>
             <div>
               <h4>Sort by category</h4>
-              <SortField id={6} name={"Hair Care - Spa/Hair Mask"} />
-              <SortField id={7} name={"Haire Care - Shampoo & Conditioner"} />
-              <SortField id={8} name={"Hair Care - Hair Oils"} />
+              <SortField
+                id={6}
+                name={"Hair Care - Spa/Hair Mask"}
+                grpName={"Category"}
+              />
+              <SortField
+                id={7}
+                name={"Haire Care - Shampoo & Conditioner"}
+                grpName={"Category"}
+              />
+              <SortField
+                id={8}
+                name={"Hair Care - Hair Oils"}
+                grpName={"Category"}
+              />
               <SortField
                 id={9}
                 name={"Hair Care - Hair Malt"}
                 border={"none"}
+                grpName={"Category"}
               />
             </div>
             <div className={classes.line} />

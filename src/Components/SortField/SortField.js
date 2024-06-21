@@ -1,29 +1,18 @@
-import { useState } from "react";
 import classes from "./SortField.module.css";
 
 const SortField = (props) => {
-  //States
-  const [select, setSelect] = useState();
-
-  //Handlers
-  const selectSortHandler = (id) => {
-    setSelect(id);
-  };
   return (
-    <div
-      className={classes.container}
-      style={{ borderBottom: props.border }}
-      onClick={() => selectSortHandler(props.id)}
-    >
-      <span>{props.name}</span>
-      <div
-        className={classes.radioBtn}
-        style={{
-          border: select === props.id ? "1.5px solid #41A647" : "",
-        }}
-      >
-        {select === props.id ? <div className={classes.selected} /> : ""}
-      </div>
+    <div className={classes.container} style={{ borderBottom: props.border }}>
+      <label htmlFor={props.id}>{props.name}</label>
+      <input
+        type="radio"
+        id={props.id}
+        name={props.grpName}
+        style={{ width: "16px", height: "16px" }}
+        value={props.name}
+        checked={props.selectedOption === props.name}
+        onChange={() => props.setSelectedOption(props.name)}
+      />
     </div>
   );
 };

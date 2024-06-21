@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import FilterContainer from "../../Components/FilterContainer/FilterContainer";
 import Footer from "../../Components/Footer/Footer";
 import Header from "../../Components/Header/Header";
@@ -18,10 +19,12 @@ import expert from "../../Assets/Images/expert.png";
 import play from "../../Assets/Images/play.png";
 import leftarrow from "../../Assets/Images/leftarrow.png";
 import rightarrow from "../../Assets/Images/arrow.png";
+import cartSuccess from "../../Assets/Images/cartSuccess.png";
 import classes from "./ProductDetail.module.css";
 
 const ProductDetail = () => {
-  let index = 1;
+  const navigate = useNavigate();
+
   const carouselImages = [
     { id: 0, src: product1 },
     { id: 1, src: product2 },
@@ -31,6 +34,9 @@ const ProductDetail = () => {
   //States
   const [activeImage, setActiveImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
+  const [index, setIndex] = useState(0);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [showCart, setShowCart] = useState(false);
 
   //Handlers
   const nextImageHandler = () => {
@@ -42,17 +48,32 @@ const ProductDetail = () => {
   const decrementHandler = () => {
     setQuantity((prev) => (prev === 0 ? 0 : prev - 1));
   };
-  const addToCartHandler = () => {
+  const addToCartHandler = (type) => {
+    if (type) {
+      setShowCart(false);
+      setShowSuccess(true);
+      setTimeout(() => {
+        setShowSuccess(false);
+        setShowCart(true);
+      }, 3000);
+    }
     if (localStorage.getItem("amrutam")) {
       const arr = JSON.parse(localStorage.getItem("amrutam"));
-      arr.push({ quantity: quantity, price: 649.0, index: index++ });
+      arr.push({ quantity: type ? 1 : quantity, price: 649.0, index: index });
       localStorage.setItem("amrutam", JSON.stringify(arr));
+      setIndex((prev) => prev + 1);
     } else {
       localStorage.setItem(
         "amrutam",
-        JSON.stringify([{ quantity: quantity, price: 649.0, index: 0 }])
+        JSON.stringify([
+          { quantity: type ? 1 : quantity, price: 649.0, index: index },
+        ])
       );
+      setIndex((prev) => prev + 1);
     }
+  };
+  const viewCartHandler = () => {
+    navigate("/cart");
   };
 
   return (
@@ -174,8 +195,8 @@ const ProductDetail = () => {
                 <path
                   d="M1 1H19"
                   stroke="black"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
                 />
               </svg>
               <span>{quantity}</span>
@@ -193,7 +214,7 @@ const ProductDetail = () => {
                 />
               </svg>
             </div>
-            <button onClick={addToCartHandler}>Add to cart</button>
+            <button onClick={() => addToCartHandler(0)}>Add to cart</button>
           </div>
           <div className={classes.info}>
             <p>
@@ -449,13 +470,98 @@ const ProductDetail = () => {
             <path
               d="M1 13L7 7L1 1"
               stroke="#3A643B"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </button>
       </div>
+      <div className={classes.bottomMenu}>
+        <div>
+          <div>
+            <img src={ruppee} alt="ruppee" />
+            <h5>649</h5>
+          </div>
+          <span>200 ml</span>
+        </div>
+        <button onClick={() => addToCartHandler(1)}>Add to cart</button>
+      </div>
+      {showSuccess ? (
+        <div className={classes.addedSuccess}>
+          <img src={cartSuccess} alt="success" />
+          <span>Item added to cart</span>
+        </div>
+      ) : (
+        ""
+      )}
+      {showCart ? (
+        <div className={classes.viewCart}>
+          <div className={classes.infoP1}>
+            <img src={recipe} alt="recipe" />
+            <div className={classes.infoP2}>
+              <h5>Proceed to Checkout</h5>
+              <div className={classes.infoP3}>
+                <span>1 item</span>
+                <svg
+                  width="4"
+                  height="4"
+                  viewBox="0 0 4 4"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="2" cy="2" r="2" fill="white" />
+                </svg>
+                <div>
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3 1.5H9"
+                      stroke="#FAFAFA"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M3 3.99219H9"
+                      stroke="#FAFAFA"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M3 6.50781L7.25 10.5078"
+                      stroke="#FAFAFA"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M3 6.50781H4.5"
+                      stroke="#FAFAFA"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M4.5 6.5C7.8335 6.5 7.8335 1.5 4.5 1.5"
+                      stroke="#FAFAFA"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+
+                  <span>649</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button onClick={viewCartHandler}>View Cart</button>
+        </div>
+      ) : (
+        ""
+      )}
       <HomeAppContainer />
       <Footer />
     </div>

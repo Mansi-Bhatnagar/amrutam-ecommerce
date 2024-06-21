@@ -1,15 +1,42 @@
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import classes from "./Header.module.css";
 
 const Header = (props) => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  //States
+  const [size, setSize] = useState();
 
   //Handlers
   const cartHandler = () => {
     navigate("/cart");
   };
+
+  //Effects
+  useEffect(() => {
+    const handleResize = () => {
+      setSize(window.innerWidth <= 500);
+    };
+
+    const isSmallScreen = window.innerWidth <= 500;
+    setSize(
+      (location.pathname === "/prodDetail" || location.pathname === "/cart") &&
+        isSmallScreen
+    );
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [location]);
+
   return (
-    <div className={classes.header}>
+    <div
+      className={classes.header}
+      style={{ display: size ? "none" : "block" }}
+    >
       <h1 style={{ padding: props.padding }}>{props.name}</h1>
       {props.show ? (
         <div className={classes.searchContainer}>

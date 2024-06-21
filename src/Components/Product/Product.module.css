@@ -87,7 +87,7 @@
   right: 0;
   cursor: pointer;
 }
-.add img {
+.container .add img {
   width: 24px;
   height: 24px;
 }
@@ -130,6 +130,15 @@
     align-items: flex-start;
     width: 60%;
     text-align: left;
+  }
+  .add {
+    left: 120px;
+    width: 25px;
+    height: 25px;
+  }
+  .container .add img {
+    width: 18px;
+    height: 18px;
   }
 }
 @media (max-width: 500px) {

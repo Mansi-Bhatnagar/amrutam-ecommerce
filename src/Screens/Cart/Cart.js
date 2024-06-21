@@ -132,8 +132,8 @@ const Cart = () => {
               <path
                 d="M1 1H19"
                 stroke="black"
-                stroke-width="1.5"
-                stroke-linecap="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
               />
             </svg>
             <span>{product.quantity}</span>

@@ -457,7 +457,12 @@
 .desktopVis {
   display: block;
 }
-
+.bottomMenu {
+  display: none;
+}
+.viewCart {
+  display: none;
+}
 @media (max-width: 1350px) {
   .contentContainer {
     gap: 0;
@@ -474,7 +479,7 @@
     width: 75%;
     height: 75%;
   }
-  .allImages img {
+  .allImages {
     display: none;
   }
   .options button {
@@ -489,15 +494,46 @@
     flex-direction: column;
     align-items: center;
   }
+  .content {
+    margin: 0 auto;
+  }
+  .video img {
+    width: 100%;
+  }
   .highlightContainer,
   .ingredientContainer {
     justify-content: center;
   }
 }
-@media (max-width: 700px) {
-  .highlightContainer,
-  .ingredientContainer {
-    flex-wrap: wrap;
+.addedSuccess {
+  display: none;
+}
+@media (max-width: 1240px) {
+  .arrowContainer {
+    display: none;
+  }
+}
+@media (max-width: 1035px) {
+  .doctorContainer {
+    width: 90%;
+    overflow: scroll;
+    gap: 16px;
+    justify-content: flex-start;
+    scrollbar-width: 0;
+    margin: 0 auto;
+    margin-bottom: 31px;
+  }
+  .doctorContainer::-webkit-scrollbar {
+    display: none;
+  }
+  .doctorContainer {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+@media (max-width: 990px) {
+  .circles {
+    display: none;
   }
 }
 @media (max-width: 900px) {
@@ -514,12 +550,85 @@
   }
   .s1 {
     margin-bottom: 20px;
+    width: 100%;
   }
   .mobileVis {
     display: block;
   }
   .desktopVis {
     display: none;
+  }
+}
+@media (max-width: 700px) {
+  .highlightContainer,
+  .ingredientContainer {
+    flex-wrap: wrap;
+  }
+  .reviews {
+    margin-bottom: 0;
+  }
+  .doctors {
+    margin-top: 20px;
+  }
+  .doctors h4 {
+    margin-bottom: 20px;
+  }
+  .video img {
+    width: calc(100% - 40px);
+    height: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .wrapper {
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .info {
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .instructions h4,
+  .genInstructions h4,
+  .questions h4,
+  .video h5 {
+    font-size: 16px;
+    line-height: 24px;
+    margin-left: 20px;
+  }
+  .highlights .heading h4,
+  .ingredients .heading h4 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .highlights .heading,
+  .ingredients .heading {
+    margin-left: 20px;
+  }
+  .activeImage img {
+    width: 344px;
+    height: 344px;
+  }
+  .content h3 {
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .rating,
+  .cost,
+  .tags,
+  .options {
+    margin-left: 20px;
+  }
+  .cost {
+    margin-bottom: 10px;
+  }
+  .activeImage .carouselArrow {
+    right: 1%;
+    top: 45%;
   }
 }
 @media (max-width: 570px) {
@@ -536,5 +645,211 @@
     font-size: 16px;
     text-align: left;
     margin-left: 20px;
+  }
+  .doctors h4 {
+    text-align: left;
+    margin-left: 20px;
+    font-size: 16px;
+  }
+  .moreBtn {
+    width: 200px;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  .moreBtn span {
+    font-size: 15px;
+  }
+  .info p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .options {
+    display: none;
+  }
+  .tags {
+    margin-bottom: 20px;
+  }
+  .contentContainer {
+    margin-top: 20px;
+  }
+  .bottomMenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    position: sticky;
+    left: 0;
+    bottom: -1px;
+    box-shadow: 0px 8px 24px 0px #00000026;
+    width: calc(100% - 40px);
+    z-index: 10000;
+    background-color: #fff;
+  }
+  .bottomMenu button {
+    width: 172px;
+    height: 52px;
+    border-radius: 12px;
+    font-family: "NunitoMedium", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+    background: #3a643b;
+    text-align: center;
+    border: none;
+    outline: none;
+  }
+  .bottomMenu div div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  .bottomMenu div div img {
+    width: 20px;
+    height: 20px;
+  }
+  .bottomMenu div div h5 {
+    font-family: "NunitoMedium", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.01em;
+    color: #0c0c0c;
+    margin: 0;
+  }
+  .bottomMenu span {
+    font-family: "NunitoMedium", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #646665;
+  }
+  .moreBtn {
+    margin-bottom: 100px;
+  }
+  .addedSuccess {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: calc(100% - 60px);
+    margin-left: 30px;
+    margin-right: 30px;
+    height: 62px;
+    gap: 12px;
+    border-radius: 12px;
+    background: #fef6ed;
+    position: fixed;
+    left: 0;
+    bottom: 80px;
+    animation-name: Morph1;
+    animation-duration: 1.5s;
+  }
+  @keyframes Morph1 {
+    0% {
+      transform: translateX(-60%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  .addedSuccess img {
+    width: 32px;
+    height: 32px;
+    margin-left: 12px;
+  }
+  .addedSuccess span {
+    font-family: "NunitoMedium", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: -0.01em;
+    color: #2e2f2e;
+  }
+  .viewCart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    width: calc(100% - 40px);
+    background: #0c140c;
+    position: fixed;
+    left: 0;
+    bottom: 78px;
+    animation-name: Morph2;
+    animation-duration: 1.5s;
+  }
+  @keyframes Morph2 {
+    0% {
+      transform: translateX(60%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  .viewCart button {
+    padding: 8px 16px 8px 16px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: #ffffff;
+    font-family: "NunitoMedium", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+    color: #3a643b;
+  }
+  .infoP1 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+  .infoP1 img {
+    width: 32px;
+    height: 32px;
+  }
+  .infoP2 h5 {
+    font-family: "NunitoMedium", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    margin: 0;
+    color: #ffffff;
+  }
+  .infoP3 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+  .infoP3 span {
+    font-family: "Nunito", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+    color: #fafafa;
+  }
+  .infoP3 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+  }
+}
+@media (max-width: 350px) {
+  .activeImage img {
+    width: calc(100% - 20px);
+  }
+  .activeImage .carouselArrow {
+    right: 5%;
   }
 }
